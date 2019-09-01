@@ -1,14 +1,13 @@
 package com.rightside.appnodemcu;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,83 +16,92 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLampada, btnLigar;
-    TextView txtResultado;
-    EditText editText;
-    private DatabaseReference databaseReference;
+    private EditText hour, min, hourSegunda, minSegunda;
+    private DatabaseReference horaAlimentacao1, horaAlimentacao2, minAlimentacao, minAlimentacao2, quantidadeAlim;
+    private RadioGroup radioGroup;
+
+    private Button buttonSalvar;
+    private TextView textView;
+    private LinearLayout segundaAlim, horariosLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
-
-        btnLampada = findViewById(R.id.btnLampada);
-        btnLigar = findViewById(R.id.btnLigar);
-        editText = findViewById(R.id.editTeste);
+        inicializarComponentes();
+        horariosLayout.setVisibility(View.GONE);
 
 
-        btnLampada.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               String name =  editText.getText().toString();
-
-
-                databaseReference.setValue(name);
-
-                Toast.makeText(MainActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+        horaAlimentacao1 = FirebaseDatabase.getInstance().getReference("horaAlimentacao1");
+        horaAlimentacao2 = FirebaseDatabase.getInstance().getReference("horaAlimentacao2");
+        minAlimentacao = FirebaseDatabase.getInstance().getReference("minAlimentacao");
+        minAlimentacao2 = FirebaseDatabase.getInstance().getReference("minAlimentacao2");
+        quantidadeAlim = FirebaseDatabase.getInstance().getReference("qtdAlim");
 
 
 
-            }
-        });
 
-        btnLigar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                solicitaDados("0");
-            }
-        });
-    }
 
-    public void solicitaDados (String comando) {
+        buttonSalvar.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+            int horaAlim = Integer.parseInt(hour.getText().toString());
+            int minAlim = Integer.parseInt(min.getText().toString());
 
-        ConnectivityManager conManager = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo networkInfo = conManager.getActiveNetworkInfo();
-
-        if(networkInfo != null && networkInfo.isConnected()) {
-            String url = "http://192.168.0.108/gpio/";
-
-            new SolicitaDados().execute(url + comando);
-        } else {
-            Toast.makeText(MainActivity.this, "Não possui REDE", Toast.LENGTH_SHORT).show();
-        }
-    }
+            int hourAlimSegunda = Integer.parseInt(hourSegunda.getText().toString());
+            int minAlimSegunda = Integer.parseInt(minSegunda.getText().toString());
 
 
 
-    private class SolicitaDados extends AsyncTask<String, Void, String> {
+               Toast.makeText(MainActivity.this, "Hr" + horaAlim + minAlim + hourAlimSegunda + minAlimSegunda, Toast.LENGTH_LONG).show();
+
+            horaAlimentacao1.setValue(horaAlim);
+            minAlimentacao.setValue(minAlim);
+            horaAlimentacao2.setValue(hourAlimSegunda);
+            minAlimentacao2.setValue(minAlimSegunda);
+
+           }
+       });
 
 
-        @Override
-        protected String doInBackground(String... url) {
-            return Conexao.getDados(url[0]);
-        }
 
-        @Override
-        protected void onPostExecute(String resultado) {
 
-            if(resultado != null) {
 
-                txtResultado.setText(resultado);
-                
-            } else {
-                Toast.makeText(MainActivity.this, "Ocorreu um erro", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
+
 }
+
+    public void checkButton(View view) {
+        boolean checked = ((RadioButton)view).isChecked();
+        switch (view.getId()) {
+            case R.id.btnDois:
+                if(checked)
+                    horariosLayout.setVisibility(View.VISIBLE);
+                    segundaAlim.setVisibility(View.VISIBLE);
+                    quantidadeAlim.setValue(true);
+                break;
+
+            case R.id.btnUm:
+                if(checked)
+                    horariosLayout.setVisibility(View.VISIBLE);
+                    segundaAlim.setVisibility(View.GONE);
+                    minSegunda.setText("0");
+                    hourSegunda.setText("0");
+                    quantidadeAlim.setValue(false);
+                    break;
+
+        }
+
+    }
+
+    public void inicializarComponentes() {
+        buttonSalvar = findViewById(R.id.btnSalvar);
+        segundaAlim = findViewById(R.id.segundaAlim);
+        hour = findViewById(R.id.hour);
+        min = findViewById(R.id.min);
+        hourSegunda = findViewById(R.id.hourSegunda);
+        minSegunda = findViewById(R.id.minSegunda);
+        horariosLayout = findViewById(R.id.horarioslayout);
+
+    }
+    }

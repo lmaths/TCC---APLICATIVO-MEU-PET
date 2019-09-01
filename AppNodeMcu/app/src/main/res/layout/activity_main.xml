@@ -7,24 +7,154 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/btnLampada"
-        android:layout_width="match_parent"
-        android:text="Salvar nome do animal"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btnLigar"
-        android:layout_marginTop="50dp"
-        android:text="LIGAR LAMPADA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/editTeste"
-        android:layout_width="393dp"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="INFORME O NOME DO ANIMAL" />
+        android:gravity="center"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Quantas vezes deseja alimentar seu pet?"
+            android:textSize="21sp" />
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+        <RadioButton
+            android:onClick="checkButton"
+            android:id="@+id/btnUm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uma vez ao dia" />
+
+        <RadioButton
+            android:onClick="checkButton"
+            android:id="@+id/btnDois"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duas vezes ao dia" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/horarioslayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Defina os Horarios:"
+            android:textSize="21sp" />
+
+        <LinearLayout
+            android:id="@+id/primeiraAlim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primeira alimentação:"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/hour"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:inputType="number"
+                android:text="08"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text=":"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/min"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:inputType="number"
+                android:text="25"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/segundaAlim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segunda Alimentação:"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/hourSegunda"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:inputType="number"
+                android:text="15"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text=":"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/minSegunda"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:inputType="number"
+                android:text="40"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definir" />
+    </LinearLayout>
+
 
 
 
