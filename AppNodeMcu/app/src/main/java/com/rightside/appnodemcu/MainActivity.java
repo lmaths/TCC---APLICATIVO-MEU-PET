@@ -1,5 +1,6 @@
 package com.rightside.appnodemcu;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText hour, min, hourSegunda, minSegunda;
     private DatabaseReference horaAlimentacao1, horaAlimentacao2, minAlimentacao, minAlimentacao2, quantidadeAlim;
-    private RadioGroup radioGroup;
+    private RadioButton radioButton, radioButtonDois;
 
     private Button buttonSalvar;
-    private TextView textView;
+    private TextView alimentarPet;
     private LinearLayout segundaAlim, horariosLayout;
 
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         inicializarComponentes();
         horariosLayout.setVisibility(View.GONE);
+
 
 
         horaAlimentacao1 = FirebaseDatabase.getInstance().getReference("horaAlimentacao1");
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     horariosLayout.setVisibility(View.VISIBLE);
                     segundaAlim.setVisibility(View.VISIBLE);
                     quantidadeAlim.setValue(true);
+                    radioButtonDois.setBackgroundColor(getResources().getColor(R.color.colorclicou));
+                    radioButton.setBackgroundColor(getResources().getColor(R.color.colorNaoSelecionado));
                 break;
 
             case R.id.btnUm:
@@ -88,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
                     minSegunda.setText("0");
                     hourSegunda.setText("0");
                     quantidadeAlim.setValue(false);
+                   radioButton.setBackgroundColor(getResources().getColor(R.color.colorclicou));
+                   radioButtonDois.setBackgroundColor(getResources().getColor(R.color.colorNaoSelecionado));
                     break;
 
         }
@@ -102,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
         hourSegunda = findViewById(R.id.hourSegunda);
         minSegunda = findViewById(R.id.minSegunda);
         horariosLayout = findViewById(R.id.horarioslayout);
+        alimentarPet = findViewById(R.id.alimPet);
+        radioButton = findViewById(R.id.btnUm);
+        radioButtonDois = findViewById(R.id.btnDois);
 
     }
     }

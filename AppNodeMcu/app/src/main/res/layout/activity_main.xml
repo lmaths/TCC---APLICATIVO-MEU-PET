@@ -5,41 +5,81 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/fundo">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:scaleType="center"
+        app:srcCompat="@drawable/meupet" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center|left"
 
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Quantas vezes deseja alimentar seu pet?"
-            android:textSize="21sp" />
+            android:id="@+id/alimPet"
+            android:layout_width="244sp"
+            android:layout_height="119sp"
+            android:layout_gravity="left"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/adaliciaregular"
+            android:gravity="left"
+            android:text="QUANTAS VEZES DESEJA ALIMENTAR SEU PET?"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            app:fontFamily="@font/adaliciaregular" />
 
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:gravity="left">
 
-        <RadioButton
-            android:onClick="checkButton"
-            android:id="@+id/btnUm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Uma vez ao dia" />
+            <RadioButton
+                android:id="@+id/btnUm"
+                android:layout_width="165dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left"
+                android:background="#042431"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="@font/adaliciaregular"
+                android:gravity="center|left"
+                android:onClick="checkButton"
+                android:shadowColor="#FFFFFF"
+                android:text="1 VEZ AO DIA"
+                android:textColor="#FFFFFF"
 
-        <RadioButton
-            android:onClick="checkButton"
-            android:id="@+id/btnDois"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Duas vezes ao dia" />
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp" />
+
+            <RadioButton
+                android:id="@+id/btnDois"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#042431"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="@font/adaliciaregular"
+                android:gravity="center"
+                android:onClick="checkButton"
+                android:text="2 VEZES AO DIA"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
 
         </RadioGroup>
 
@@ -47,112 +87,123 @@
 
     <LinearLayout
         android:id="@+id/horarioslayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical">
 
-
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Defina os Horarios:"
-            android:textSize="21sp" />
+            android:layout_width="135dp"
+            android:layout_height="75dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:text="DEFINA OS HORÁRIOS:"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
 
         <LinearLayout
             android:id="@+id/primeiraAlim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorNaoSelecionado"
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Primeira alimentação:"
-                android:textSize="21sp" />
-
             <EditText
                 android:id="@+id/hour"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
+                android:gravity="right"
                 android:inputType="number"
                 android:text="08"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
+                android:gravity="center"
                 android:text=":"
-                android:textSize="20sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
 
             <EditText
                 android:id="@+id/min"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
+                android:gravity="left"
                 android:inputType="number"
                 android:text="25"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/segundaAlim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorNaoSelecionado"
             android:gravity="center"
             android:orientation="horizontal">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Segunda Alimentação:"
-                android:textSize="21sp" />
-
             <EditText
                 android:id="@+id/hourSegunda"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
+                android:gravity="right"
                 android:inputType="number"
                 android:text="15"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:gravity="center"
                 android:text=":"
-                android:textSize="20sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
 
             <EditText
                 android:id="@+id/minSegunda"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
+                android:gravity="left"
                 android:inputType="number"
                 android:text="40"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
         </LinearLayout>
+
         <Button
             android:id="@+id/btnSalvar"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Definir" />
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorclicou"
+            android:gravity="center"
+            android:text="Salvar"
+            android:textSize="30sp" />
     </LinearLayout>
 
 
