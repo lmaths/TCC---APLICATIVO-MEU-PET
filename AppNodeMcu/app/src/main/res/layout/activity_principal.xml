@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/fundo"
+    android:orientation="vertical"
+    tools:context=".PrincipalActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="true"
+        android:clickable="false"
+        android:cropToPadding="true"
+        android:scaleType="center"
+        android:src="@drawable/meupet" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#20000000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtconfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/adaliciaregular"
+            android:gravity="center"
+            android:text="CONFIGURAÇÕES ATUAIS"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:fontFamily="@font/adaliciaregular" />
+
+        <TextView
+            android:id="@+id/quantidadeALim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/adaliciaregular"
+            android:gravity="center"
+            android:text="quantidade"
+            android:textColor="#FFFFFF"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/horario1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/adaliciaregular"
+            android:text="horario1"
+            android:textColor="#FFFFFF"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/horario2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/adaliciaregular"
+            android:gravity="center"
+            android:text="horario2"
+            android:textColor="#FFFFFF"
+            android:textSize="27sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtReservatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#20000000"
+        android:fontFamily="@font/adaliciaregular"
+        android:gravity="center"
+        android:text="RESERVATÓRIOS"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#20000000"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtRacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adaliciaregular"
+                android:gravity="center"
+                android:text="Ração"
+                android:textColor="#FFFFFF"
+                android:textSize="27sp" />
+
+            <ImageView
+                android:id="@+id/imgRacao"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/adaliciaregular"
+                android:gravity="center"
+                android:text="Água"
+                android:textColor="#FFFFFF"
+                android:textSize="27sp" />
+
+            <ImageView
+                android:id="@+id/imgAgua"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonAlterarHorarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#70000000"
+        android:fontFamily="@font/adaliciaregular"
+        android:text=" DETERMINE OS HORÁRIOS PARA A REPOSIÇÃO"
+        android:textSize="27sp" />
+
+
+</LinearLayout>
