@@ -9,7 +9,7 @@ public class DefinirHorariosController {
 
     public static void alertaDeNovoHorario(final FragmentActivity activity) {
 
-        final AlertDialog.Builder alerta = new AlertDialog.Builder(activity, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+        final AlertDialog.Builder alerta = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
         alerta.setTitle("HORÁRIOS DE ALIMENTAÇÃO").setMessage("Deseja definir novos horários?")
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override

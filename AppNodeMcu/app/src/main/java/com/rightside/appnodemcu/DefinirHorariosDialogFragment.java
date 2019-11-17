@@ -126,7 +126,15 @@ public class DefinirHorariosDialogFragment extends DialogFragment {
                 timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        hour.setText(hourOfDay + ":" + minute);
+
+                        String AM_PM = "" ;
+                        if(hourOfDay < 12) {
+                            AM_PM = "am";
+                        } else {
+                            AM_PM = "pm";
+
+                        }
+                        hour.setText(hourOfDay + ":" + minute + " " + AM_PM);
 
                         horaAlim = hourOfDay;
                         minAlim  = minute;
@@ -153,7 +161,14 @@ public class DefinirHorariosDialogFragment extends DialogFragment {
                 timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        hourSegunda.setText(hourOfDay + ":" + minute);
+                        String AM_PM = "" ;
+                        if(hourOfDay < 12) {
+                            AM_PM = "am";
+                        } else {
+                            AM_PM = "pm";
+
+                        }
+                        hourSegunda.setText(hourOfDay + ":" + minute + " " + AM_PM);
                         hourAlimSegunda = hourOfDay;
                         minAlimSegunda = minute;
                     }
