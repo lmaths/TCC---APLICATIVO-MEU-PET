@@ -104,34 +104,14 @@
 
             <EditText
                 android:id="@+id/hour"
-                android:layout_width="55dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:background="@null"
-                android:gravity="right"
-                android:inputType="number"
-                android:text="08"
-                android:textSize="25sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:gravity="center"
-                android:text=":"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/min"
-                android:layout_width="55dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
                 android:background="@null"
-                android:gravity="left"
-                android:inputType="number"
-                android:text="25"
+                android:gravity="center"
+                android:inputType="time"
+                android:text="08"
                 android:textSize="25sp" />
 
 
@@ -151,33 +131,14 @@
 
             <EditText
                 android:id="@+id/hourSegunda"
-                android:layout_width="55dp"
-                android:layout_height="30dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
-                android:gravity="right"
+                android:gravity="center"
                 android:inputType="number"
                 android:text="15"
-                android:textSize="25sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:gravity="center"
-                android:text=":"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/minSegunda"
-                android:layout_width="55dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:background="@null"
-                android:gravity="left"
-                android:inputType="number"
-                android:text="40"
                 android:textSize="25sp" />
 
         </LinearLayout>

@@ -18,11 +18,12 @@
         android:cropToPadding="true"
         android:scaleType="center"
         android:src="@drawable/meupet" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="#20000000"
         android:gravity="center"
         android:orientation="vertical">
@@ -79,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="#20000000"
         android:fontFamily="@font/adaliciaregular"
         android:gravity="center"
@@ -115,8 +116,8 @@
 
             <ImageView
                 android:id="@+id/imgRacao"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
 
@@ -140,8 +141,8 @@
 
             <ImageView
                 android:id="@+id/imgAgua"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -152,11 +153,13 @@
 
     <Button
         android:id="@+id/buttonAlterarHorarios"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="#70000000"
         android:fontFamily="@font/adaliciaregular"
+        android:gravity="center"
         android:text=" DETERMINE OS HORÁRIOS PARA A REPOSIÇÃO"
         android:textSize="27sp" />
 
